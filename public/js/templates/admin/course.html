@@ -1,0 +1,67 @@
+<div class = "container-smooth" ng-include = "global.navUrl"></div>
+<div class="row">
+     <div class="col-md-2"></div>
+                <div class="col-md-9">
+                    <div class="ibox">
+                        <div class="ibox-title">
+                            <span class="pull-right">(<strong>234</strong>) courses</span>
+                            <h5>Course Catalog</h5>
+                        </div>
+                        <div class="ibox-content" data-ng-controller="courseCreateController">
+                            <div class="table-responsive">
+                                <table class="table shoping-cart-table">
+
+                                    <tbody>
+                                    <tr ng-repeat="courses in courses">
+                                        <td width="90">
+                                               
+                                            <div class="cart-product-imitation" style="background-image: url(img/book.jpeg)">
+                                                
+                                            </div>
+                                        </td>
+                                        <td class="desc">
+                                            <h3>
+                                                <a class="text-navy"  ng-click="viewCourse(courses.id)">
+                                                    {{courses.course_name}}
+                                                    {{courses.id}}
+                                                </a>
+                                            </h3>
+                                            <div class="content"><p class="small" style="word-wrap: break-word;">
+                                                {{courses.desc | htmlToPlaintext}}</p></div>
+
+
+                                            <dl class="small m-b-none">
+                                                <dt>Description lists</dt>
+                                                <dd>A description list is perfect for defining terms.</dd>
+                                            </dl>
+
+                                            <div class="m-t-sm">
+                                                <a href="#" class="text-muted"><i class="fa fa-gift"></i> Add to Shortlist</a>
+                                                |
+                                                <a href="#" class="text-muted"><i class="fa fa-trash"></i> Remove item</a>
+                                            </div>
+                                        </td>
+
+                                        <td>
+                                            <!--<button class="btn btn-primary" type="button"-->
+                                                     <!--name="" ng-click="enroll()"><i class="fa fa-check"></i>&nbsp;Enroll</button>-->
+                                        </td>
+                                        <td width="65">
+                                            <input type="text" class="form-control" placeholder="1">
+                                        </td>
+                                        <td>
+                                            <h4>
+                                                Free!
+                                            </h4>
+                                        </td>
+                                        <hr>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>    </div>
+                        </div>
+     <div class="col-md-1"></div>
+
+ </div>

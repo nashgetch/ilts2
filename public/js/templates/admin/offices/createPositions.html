@@ -1,0 +1,39 @@
+<div class = "container-smooth" ng-include = "global.navUrl"></div>
+<div class="wrapper wrapper-content">
+    <div class="row">
+
+        <div class="col-lg-9">
+            <div class="mail-box-header">
+                <h2 style="font-family: 'Roboto', lucida grande, lucida sans unicode, helvetica, arial, sans-serif">
+                    Create An Office Position!
+                </h2>
+            </div>
+            <div class="mail-box">
+                <div class="mail-body">
+                    <div class="wrapper wrapper-content animated fadeInRight">
+                        <form name="posForm" ng-submit="createPositions(posForm)" novalidate>
+                            <div class="form-group" ng-class="{'has-error' : posForm.d_name.$invalid && formSubmitted && posForm.p_name.$invalid}">
+                                <label for="deptName" class="sr-only">Department Name</label>
+                                <input type="text" id="deptName"
+                                       class="form-control" name="d_name" ng-model = "newPos.d_name" required>
+                                <p ng-show="posForm.d_name.$invalid && formSubmitted" class="help-block">The name of the department is required!</p>
+                            </div>
+                            <div class="form-group"  ng-class="{'has-error' : posForm.p_name.$invalid && formSubmitted}">
+                                <label for="posName" class="sr-only">Description</label>
+                                <input type="text" id="posName"
+                                       class="form-control" name="p_name" ng-model = "newPos.p_name" required>
+                                <p ng-show="posForm.p_name.$invalid && formSubmitted" class="help-block">The name of the position is required!</p>
+
+                                <div class="checkbox checkbox-inline">
+                                    <input type="checkbox" id="inlineCheckbox3" value="true" name="isHead" ng-model = "newPos.isHead">
+                                    <label for="inlineCheckbox3"> Head Position Access? </label>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary btn-sm" type="submit">Save</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,89 @@
+<div class = "container-smooth" ng-include = "global.navUrl"></div>
+    <div class="wrapper wrapper-content animated fadeInRight" data-ng-controller="courseCreateController">
+
+        <div class="row">
+            <div class="col-lg-12">
+
+                <div class="ibox product-detail">
+                    <div class="ibox-content">
+
+                        <div class="row">
+                            <div class="col-md-5">
+
+
+                                <slick dots="true">
+
+                                    <div>
+                                        <div class="image-imitation">
+                                            <img src="/img/code.jpg">
+                                            <!--image of the course with the image tag-->
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="image-imitation">
+                                                <img src="/img/code.jpg">
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="image-imitation">
+                                                <img src="/img/code.jpg">
+                                        </div>
+                                    </div>
+
+
+                                </slick>
+
+                            </div>
+                            <div class="col-md-7">
+
+                                <h2 class="font-bold m-b-xs">
+                                    {{course.course_name}}
+                                </h2>
+                                <small>{{course.course_name}} includes {{course.no_of_modules}} Chapters.</small>
+                                <div class="m-t-md">
+                                    <h2 class="product-main-price">Free! <small class="text-muted">in your reach</small> </h2>
+                                </div>
+                                <hr>
+                                <h4>Course description</h4>
+
+                                <div class="small text-muted">
+                                    {{course.desc | htmlToPlaintext | nospace}}
+                                    <br/>
+                                    <br/>
+                                    There are many variations of passages of Lorem Ipsum available, but the majority
+                                    have suffered alteration in some form, by injected humour, or randomised words
+                                    which don't look even slightly believable.
+                                </div>
+                                <dl class="small m-t-md">
+                                    <dt>Description lists</dt>
+                                    <dd>Algorithms analysis</dd>
+
+                                </dl>
+                                <hr>
+                                <div>
+                                    <div class="btn-group">
+                                        <button class="btn btn-primary btn-sm" ng-click="enroll(course.id)"><i class="fa fa-cart-plus"></i> Enroll</button>
+                                        <button restrict access="student" class="btn btn-primary btn-sm" ng-click="addM(course.id)"><i class="fa fa-cart-plus"></i> Add Modules</button>
+                                        <button class="btn btn-white btn-sm" ng-click="goto()"><i class="fa fa-star"></i> Contact Author</button>
+                                        <button class="btn btn-white btn-sm" ng-click="viewEnroll(course.id)"><i class="fa fa-envelope"></i> View Enrolled Students </button>
+                                    </div>
+                                </div>
+
+
+
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="ibox-footer">
+                            <span class="pull-right">
+                                Full stock - <i class="fa fa-clock-o"></i> {{course.updated_at}}
+                            </span>
+                        The contents of this course are always free!
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+</div>

@@ -1,0 +1,65 @@
+<div class = "container-smooth" ng-include = "global.navUrl"></div>
+<div class="wrapper wrapper-content"data-ng-controller="chatController">
+    <div class="row" ng-repeat="single in posts">
+        <div class="col-lg-9 animated fadeInRight"  >
+            <div class="mail-box-header">
+                <h2>
+                    View Posts
+                </h2>
+
+                <div class="mail-tools tooltip-demo m-t-md">
+                    <h3>
+                        <span class="font-noraml">Subject: </span>{{ single.title }}
+                    </h3>
+                    <h5>
+                        <span class="pull-right font-noraml">{{ single.created_at}}</span>
+                        <!--<span class="font-noraml">From: </span>{{ singleLetter.from}}-->
+                    </h5>
+                </div>
+            </div>
+            <div class="mail-box">
+                <div class="mail-body">
+                    <p>
+                    <h4 style="text-align: center">{{ single.title}}</h4>
+                    <br/>
+                    <br/>
+                    <div class="">{{ single.body | htmlToPlaintext}}</div>
+                    </p>
+                </div>
+            </div>
+        </div>
+    
+    <div class="mail-box" data-ng-controller="forumController">
+    <form name = "comForm">
+        <div class="row">
+            <div class="col-lg-10">
+                <div class="chat-message-form">
+
+                    <div class="forum-post-info">
+                <textarea class="form-control message-input" name="body" ng-model="newAnswer.message"
+                          placeholder="Enter your answer here">
+                </textarea>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="mail-body text-right tooltip-demo">
+            <button class="btn btn-sm btn-white" ng-click="comment(single.id)"
+                    ><i class="fa fa-reply"></i>Comment</button>
+        </div>
+    </form>
+       <div class="mail-body" ng-repeat="comment in comments">
+            <div class="ibox-content forum-post-container">
+                    <div class="forum-post-info">
+                            
+                        <h5>
+                         </a><span class="text-muted"><i class="fa fa-globe"></i> {{ comment.body }}</span>
+                            <span class="text-muted"></span></h5>
+                    </div>
+                    </div>
+       </div>
+</div>
+ 
+</div>
+    </div>

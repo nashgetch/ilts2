@@ -1,0 +1,33 @@
+<div class = "container-smooth" ng-include = "global.navUrl"></div>
+<div class="wrapper wrapper-content">
+    <div class="row">
+
+        <div class="col-lg-9">
+            <div class="mail-box-header">
+                <h2 style="font-family: 'Roboto', lucida grande, lucida sans unicode, helvetica, arial, sans-serif">
+                    Create A Department!
+                </h2>
+            </div>
+            <div class="mail-box">
+                <div class="mail-body">
+<div class="wrapper wrapper-content animated fadeInRight">
+    <form name="dept" ng-submit="createDept(dept)" novalidate>
+        <div class="form-group" ng-class="{'has-error' : dept.dept_name.$invalid && formSubmitted}">
+            <label for="deptName" class="sr-only">Department Name</label>
+            <input type="text" id="deptName"
+                   class="form-control" name="dept_name" ng-model = "newDept.name" required>
+            <p ng-show="dept.dept_name.$invalid && formSubmitted" class="help-block">The name of the department is required!</p>
+        </div>
+        <div class="form-group"  ng-class="{'has-error' : dept.dept_desc.$invalid && formSubmitted}">
+            <label for="deptDesc" class="sr-only">Description</label>
+            <textarea id="deptDesc" class="form-control" name="dept_desc" ng-model="newDept.desc" required></textarea>
+        <p ng-show="dept.dept_desc.$invalid && formSubmitted" class="help-block">The Description of the department is required!</p>
+        </div>
+        <button class="btn btn-primary btn-sm" type="submit">Save</button>
+    </form>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>

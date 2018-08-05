@@ -1,0 +1,52 @@
+<div class = "container-smooth" ng-include = "global.navUrl"></div>
+<div class="gray-bg {{$state.current.name}}" style="" ng-controller="courseCreateController">
+    <div class="row">
+            <div class="col-lg-12">
+                    <div class="ibox float-e-margins">
+                        <div class="ibox-content text-center p-md">
+
+                            <h2><span class="text-navy">Smart Learning - Responsive and Clear</span>
+                                is provided with online Simulators <br/>Quizzes and assessment features.</h2>
+
+                            <p>
+                                Courses all around the web are available here! (Just Browse and Get yourself a wisdom.) 
+                            </p>
+
+
+                        </div>
+                    </div>
+            </div>
+    </div>
+                <div class="row">
+                    <div class="col-lg-4" ng-repeat="staff in courses" style="box-shadow: 5px 10px #888888;">
+                        
+            <div class="contact-box center-version">
+                    <a ng-click="viewCourse(staff.id)">
+                    <img alt="image" class="img-circle" src="img/books.png">
+                    <h3 class="m-b-xs" style="font-family: 'Roboto', lucida grande, lucida sans unicode, helvetica, arial, sans-serif">
+                        <strong>{{staff.course_name}}</strong></h3>
+                    <div 
+                    class="font-bold" style="
+                    height:180px;
+                    width:350px;
+                    overflow:hidden;
+                    font-family: 'Roboto', lucida grande, lucida sans unicode, helvetica, arial, sans-serif">
+                       {{staff.desc | htmlToPlaintext}}</div>
+                    <address class="m-t-md" style="font-family: 'Roboto', lucida grande, lucida sans unicode, helvetica, arial, sans-serif">
+                        <strong>{{staff.belongs_to_dept}}, Inc.</strong><br>
+                        <abbr title="Phone">P:</abbr> {{staff.created_at}}
+                    </address>
+                    </a>
+                <div class="contact-box-footer">
+                    <div class="m-t-xs btn-group">
+                        <button class="btn btn-primary btn-sm" ng-click="enroll(staff.id)">
+                            <i class="fa fa-cart-plus">
+
+                        </i> Enroll</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        </div>
+        </div></div></div></div>

@@ -1,0 +1,13 @@
+<div data-ng-controller='testController'>
+
+<h2>Can I upload multiple files?</h2>
+<p>Percentage (This is the percentage combined of all the files, there's no way yet to make it individualized
+    and it shouldn't care since all of them are in the same request, not in individualized requests):
+    <br> {{ percentM }}</p>
+<form data-ng-submit='uploadMultiple()'>
+    <input type='file' multiple id='multiple-file'><br
+        >
+    <input type='submit' value='Upload a bunch of files'>
+
+</form>
+</div>

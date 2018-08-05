@@ -1,0 +1,72 @@
+<div class = "container-smooth" ng-include = "global.navUrl"></div>
+    <div class="mail-box-header">
+        <div class="pull-right tooltip-demo">
+            
+        </div>
+            <h2>
+            Run Code on Arduino
+            </h2>
+            <div class="row wrapper border-bottom white-bg page-heading">
+                
+                <div class="col-lg-2">
+            
+                </div>
+            </div>
+<div class="wrapper wrapper-content animated fadeInRight" ng-controller="codeEditorCtrl">
+<div class="row" ng-controller="arduinoController">
+<div class="col-lg-12">
+    <form class="form-horizontal" name="ard_code">
+    <div class="ibox" >
+        <div class="ibox-title">
+            <h5><strong>SL+</strong> - Arduino Experiments Code Runner</h5>
+        </div>
+        <!-- <div class="ibox-content"> -->
+ 
+            <ui-codemirror ui-codemirror-opts="editorOptions" name="code" ng-model ="code">
+            // Code goes here
+
+            </ui-codemirror>
+        <!-- </div> -->
+        <div class="clearfix"></div>  
+        <div class="pull-right tooltip-demo">
+                <button type="submit"
+                ng-click="runCode()"
+                class="btn btn-white btn-sm" 
+                data-toggle="tooltip" data-placement="top"
+                title="Simulate Arduino"
+                >Simulate</button>
+                <button type="button"
+                ng-click="exitCode()"
+                class="btn btn-white btn-sm" 
+                data-toggle="tooltip" data-placement="top"
+                title="Simulate Arduino"
+                >Stop Sim.</button>
+        </div>     
+        <div class="clearfix"></div>  
+    </div>
+</form>
+
+        <div class="mail-box">
+            <div class="mail-body">
+          <h3>
+            <span class="font-noraml">Output Goes Here!
+        </h3>
+        <div class="mail-body">
+        <h5>
+            <span class="font-noraml">{{ arduino }}</span>
+            <!--<span class="font-noraml">From: </span>{{ singleLetter.from}}-->
+        </h5></div>
+    </div></div></div>
+<!-- <div class="pull-right tooltip-demo">
+       <div class="mail-box">
+    <div class="mail-body">
+    <h2>{{ arduino }}</h2>
+    </div>
+    </div>
+    </div> -->
+</div>
+</div>
+</div>
+
+
+    </div>   

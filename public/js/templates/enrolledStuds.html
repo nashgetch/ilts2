@@ -1,0 +1,27 @@
+<div class = "container-smooth" ng-include = "global.navUrl"></div>
+<div class="mail-box" ng-controller="courseCreateController">
+
+    <table class="table table-hover table-mail">
+        <tbody ng-repeat="enrolled in enr" >
+        <tr ng-repeat="enrolled in enrolled" >
+            <td class="mail-ontact">{{ enrolled.id}}</td>
+            <td class="mail-subject" ng-click="viewLetter(enrolled.id)"
+                style="font-family: -apple-system;
+                 max-width: 200px;
+                 max-lines: 4;
+                 overflow: hidden;
+                 text-overflow: clip;
+                 white-space: nowrap">
+               <strong>{{ enrolled.name}}</strong>
+            <br>
+
+            </td>
+
+            <td class="text-right mail-date">{{enrolled.email}}</td>
+            <td>
+                <button  class="btn btn-white btn-sm" data-toggle="tooltip" data-placement="top" title="Mark as important"><i class="fa fa-exclamation"></i></button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>

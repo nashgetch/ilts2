@@ -1,0 +1,82 @@
+<div class = "container-smooth" ng-include = "global.navUrl"></div>
+<div class="wrapper wrapper-content" data-ng-controller="moduleCreateController">
+    <div class="row"> <div class="col-lg-2"></div>
+        <div class="col-lg-9 animated fadeInRight">
+            <div class="mail-box-header">
+                <div class="pull-right tooltip-demo" data-ng-controller="courseCreateController">
+                    <button ng-click="goto(course.id)" class="btn btn-white btn-sm" data-toggle="tooltip"
+                            data-placement="top" title="Reply"><i class="fa fa-reply"></i> Ask Questions?</button>
+                    <button ng-click="gotoGrade(course.id)" class="btn btn-white btn-sm" data-toggle="tooltip"
+                            data-placement="top" title="Reply"><i class="fa fa-reply"></i> Grades</button>
+                </div>
+                <h2 data-ng-controller="courseCreateController">
+                    View Course Modules for {{course.course_name}}
+                </h2>
+
+                <div class="mail-tools tooltip-demo m-t-md">
+                    <h3>
+                        <span class="font-noraml">Chapter: </span>{{ module.chapter_name }}
+                    </h3>
+                    <h5>
+                        <span class="pull-right font-noraml">{{ module.created_at}}</span>
+                        <!--<span class="font-noraml">From: </span>{{ singleLetter.from}}-->
+                    </h5>
+                </div>
+            </div>
+            <div class="mail-box" ng-repeat="module in module1">
+                <div class="mail-body">
+                    <p>
+                    <h4 style="text-align: center">{{ module.chapter_name}}</h4>
+                    <br/>
+                    <br/>
+                    <div style="word-wrap: break-word" >{{ module.description | htmlToPlaintext}}</div>
+                    </p>
+                </div>
+                <div class="mail-attachment">
+                    <p>
+                        <span><i class="fa fa-paperclip"></i> 1 attachment - </span>
+                        <a ng-click="">Download all</a>
+                        |
+                        <a href="">View all files</a>
+                    </p>
+                    <div class="attachment">
+                        <div class="file-box">
+                            <div class="file">
+                                <a href="">
+                                    <span class="corner"></span>
+
+                                    <div class="icon">
+                                        <i class="fa fa-file"></i>
+                                    </div>
+                                    <div class="file-name" ng-click="viewFile(module.filename)">
+                                        {{module.filename}}
+                                        <br/>
+                                        <small>Added: {{module.updated_at}}</small>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="file-box">
+                        </div>
+                        <div class="file-box">
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+
+                    <div class="clearfix"></div>
+                </div>
+                
+                <div ng-controller="quizController">
+                        <h4 style="text-align: center">Quiz After This Chapter</h4>
+                        <div ng-controller="courseCreateController">
+                            <div class="mail-box">
+                                <div class="mail-body">
+                                    <a ng-click="viewQuiz(course.course_name, module.chapter_no)"> Start Quiz</a>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div></div>
+</div>

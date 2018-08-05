@@ -1,0 +1,68 @@
+<div class = "container-smooth" ng-include = "global.navUrl"></div>
+<div class="wrapper wrapper-content" data-ng-controller="moduleCreateController">
+<div class="row">
+<div class="col-lg-2"></div>
+<div class="col-lg-9">
+<div class="mail-box-header">
+<div class="pull-right tooltip-demo">
+
+    <button ng-click="discard()" class="btn btn-danger btn-sm" data-toggle="tooltip" data-placement="top" title="Discard"><i class="fa fa-times"></i> Discard</button>
+</div>
+<h2 data-ng-controller="courseCreateController">
+    Modules for {{course.course_name}}
+</h2>
+</div>
+<div class="mail-box">
+<form class="form-horizontal" name = "moduleForm">
+    <div class="mail-body">
+        <h3>
+            <i style="text-align: center">Chapters - Max. No of Chapters = {{course.no_of_modules}}</i>
+        </h3><hr>
+        <div class="form-group"><label class="col-sm-2 control-label">Chapter Name:</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" name="chapter_name" ng-model="modules.name">
+            </div>
+            </div>
+        <div class="form-group"><label class="col-sm-2 control-label">No of Chapter:</label>
+            <div class="col-sm-10">
+                <!--<input type="text" class="form-control" ng-model="newCourse.modules" name="modules">-->
+                <input type="text"  ng-model="modules.chapter_no"
+                        name="chapter_no" touch-spin spin-options="spinOption2">
+            </div>
+        </div>
+
+        <!--<div class="form-group"><label class="col-sm-2 control-label">Video File:</label>-->
+            <!--<div class="col-sm-10">-->
+                <!--<input type="file" ng-files="setTheFiles($files)" name = "file2" id="file_field2"-->
+                        <!--class="form-control" accept="application/pdf">-->
+            <!--</div>-->
+        <!--</div>-->
+        <div class="mail-text h-200">
+            <div summernote class="summernote" name="description" ng-model="modules.desc">
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <div class="form-group"><label class="col-sm-2 control-label">PDF File:</label>
+
+            
+            <div class="col-sm-10">
+                <input type="file" ng-files="setTheFiles($files)" name = "file1" id="file_field"
+                        class="form-control" accept="application/pdf">
+            </div>
+        </div>
+        <div class="pull-right tooltip-demo" data-ng-controller="courseCreateController">
+            <button ladda="loadingDemo" class="ladda-button ladda-button-demo btn btn-primary" 
+            data-toggle="tooltip" data-placement="top" title="Create Module" data-style="zoom-in"
+            ng-click="uploadFile(course.id)">
+                <i class="fa fa-pencil">
+                </i> Create </button>
+        </div>
+    </div>
+</form>
+<div class="mail-body text-right tooltip-demo">
+</div>
+<div class="clearfix"></div>
+</div>
+</div>
+</div>
+</div>

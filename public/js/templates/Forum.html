@@ -1,0 +1,40 @@
+<div class = "container-smooth" ng-include = "global.navUrl"></div>
+<div class="wrapper wrapper-content" data-ng-controller="forumController">
+    <div class="row animated fadeInRight">
+        <div class="col-lg-12">
+            <div class="wrapper wrapper-content animated fadeInRight">
+                <div class="mail-box-header">
+                    <div class="pull-right tooltip-demo" data-ng-controller="courseCreateController">
+                        <button ng-click="ask(course.id)" class="btn btn-danger btn-sm" data-toggle="tooltip"
+                                data-placement="top" title="Ask Question"><i class="fa fa-times"></i> Participate </button>
+                    </div>
+                    <h2>
+                        Ask A Question
+                    </h2>
+                </div>
+                <div class="ibox-content forum-post-container">
+                    <div class="forum-post-info" data-ng-controller="courseCreateController">
+                        <h4><span class="text-navy"><i class="fa fa-globe"></i> General discussion</span> - Announcements - <span class="text-muted">Free talks on {{course.course_name}}</span></h4>
+                    </div>
+                    <div class="media" ng-repeat="post in posts">
+                        <div class="media-body">
+                            <h4 class="media-heading"></h4>
+                            <a ng-click="viewPost(post.id)"><td><strong>{{post.title}} {{ post.course_id }}</strong></td></a>
+                            <br/><br/>
+                            {{post.body | htmlToPlaintext}}
+                            <br/><br/>
+                            - Nahom Getu
+                            <br>
+                            <p style="align-content: flex-end">Created at: {{post.created_at}}</p>
+                        </div>
+                        <div class="clearfix"></div>  
+                       
+                    </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+

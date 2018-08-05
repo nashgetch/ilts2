@@ -1,0 +1,28 @@
+<div class = "container-smooth" ng-include = "global.navUrl"></div>
+<div class="wrapper wrapper-content" data-ng-controller="courseCreateController">
+    <div class="row">
+        <div class="col-lg-2"></div>
+        <div class="col-lg-9 animated fadeInRight">
+            <div class="mail-box-header">      
+                <h2>
+                    My Classroom
+                </h2>   
+            </div>
+            <div class="mail-box" ng-repeat = "enrolled in enrolled_in">
+                   
+                <div class="mail-body">
+                    <p>
+                    <div ng-repeat="en in enrolled">
+                    <a class="text-navy"  ng-click="gotoModule(en.id)">
+                        <h4 style="text-align: center">{{ en.course_name }}</h4>
+                    </a>   
+                    <br/>
+                    <br/>
+                    <div style="word-wrap: break-word">{{ en.desc | htmlToPlaintext }}</div>
+                     
+                </p>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>

@@ -1,0 +1,32 @@
+<div class = "container-smooth" ng-include = "global.navUrl"></div>
+<div class="mail-box" ng-controller="quizController">
+  <form class="form-horizontal">      
+  <div class="mail-body" ng-repeat="q in quizzes">
+         <p>{{ q.question }}</p>
+        
+         <div class="mail-box">
+            <input type="radio" id="contactChoice1"
+             name="code" ng-model="nash.code" value="{{ q.c1 }}">
+            <label for="contactChoice1">{{ q.c1 }}</label>
+            <br>
+            <input type="radio" id="contactChoice2"
+             name="code" ng-model="nash.code" value="{{ q.c2 }}">
+            <label for="contactChoice2">{{ q.c2 }}</label>
+            <br>
+            <input type="radio" id="contactChoice3"
+             name="code" ng-model="nash.code" value="{{ q.c3 }}">
+            <label for="contactChoice3">{{ q.c3 }}</label>
+          </div>
+          <div class="clearfix"></div>  
+            <div class="pull-right tooltip-demo">
+                    <button type="submit"
+                    ng-click="checkAnswer(q.id)"
+                    class="btn btn-white btn-sm" 
+                    data-toggle="tooltip" data-placement="top"
+                    title="Answer Question"
+                    >Answer</button>
+            </div>
+          </div>
+          </form>
+        </div>
+    </div>
